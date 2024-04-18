@@ -1,0 +1,97 @@
+// var username=document.getElementsByTagName("input")[0];
+// var email=document.getElementById("email");
+// var password=document.getElementById("password");
+
+// var button_2=document.getElementsByClassName("btn2")[0];
+
+// button_2.addEventListener("click",(event)=>{
+    //     event.preventDefault();
+    //     if(username.value=="")
+    //     {
+//         showerror(username);
+//     }
+//     else if(email.value!=""&& password.value!="")
+//     {
+    //         showsuccess(username);
+    //     }
+    //     if(email.value=="")
+//     {
+    //         showerror(email);
+    //     }
+//     else if(username.value!=""&& password.value!="")
+//     {
+    //         showsuccess(email);
+    //     }
+    //     if(password.value=="")
+    //     {
+        //         showerror(password);
+        //     }
+        //     else if(username.value!=""&& password.value!="")
+        //     {
+            //         showsuccess(password);
+            //     }
+            // });
+            
+            // function showerror(element)
+            // {
+                //     element.style.border="2px solid red";
+                // }
+                // function showsuccess(element)
+                // {
+                    //     element.style.border="2px solid green";
+// }
+
+var button_1=document.getElementsByClassName("btn")[0];
+button_1.addEventListener("click",(event)=>{
+event.preventDefault();
+var login_page=document.getElementsByClassName("second_container")[0];
+showpage(login_page);
+});
+function showpage(element)
+{
+        element.style.visibility='visible';
+}
+var username = document.getElementsByTagName("input")[0];
+let email = document.getElementById("email");
+var password = document.getElementById("password");
+
+var button_2 = document.getElementsByClassName("btn2")[0];
+var second_container=document.getElementsByTagName('div')[2];
+button_2.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Check each field and apply appropriate border
+    if (username.value === "") {
+        showError(username);
+    } else {
+        showSuccess(username);
+    }
+
+    if (email.value === "") {
+        showError(email);
+    } else {
+        showSuccess(email);
+    }
+
+    if (password.value === "") {
+        showError(password);
+    } else {
+        showSuccess(password);
+    }
+    if(username.value !== ""&& email.value !== ""&&password.value !== "")
+    {
+        second_container.remove();
+    }
+    else
+    {
+        alert("SOMETHING MISSING!!!");
+    }
+});
+
+function showError(element) {
+    element.style.border = "2px solid red";
+}
+
+function showSuccess(element) {
+    element.style.border = "2px solid green";
+}
